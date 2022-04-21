@@ -1,15 +1,15 @@
-# Quantum_Lab
-以 Python 语言实现对各种实验设备的控制，进行实验测试和数据采集，运行于 Jupyter Notebook。
+# Q-Lab
+A framework designed for Circuit QED experiments, providing an all-in-one solution for the researchers in the relevant field.
 
-<sub>Quantum_Lab 继承自 [QuLab](https://github.com/feihoo87/QuLab/).</sub>
+It works in the Jupyter Notebook.
 
-## 软件信息
+## Structure
 1. 顶层为 qulab 项目和 setup 信息。
 2. qulab 包含：设备驱动配置模块 drivers 和 device、用户工具模块 tools、软件管理模块。
 3. 软件的代码、数据存储管理、仪器配置、用户信息等通过 MongoDB 实现。
 
 
-## 安装和配置
+## Installation
 1. 运行环境安装
     - Python 
 
@@ -29,23 +29,21 @@
 
     安装和配置过程请参考[教程](https://docs.mongodb.com/manual/administration/install-community/)。
 
-3. Quantum_Lab 安装
+3. Q-Lab
 ```
-    1）$ cd /*/*/*（其中‘/*/*/*’为准备安装Quantum_Lab的路径）
-    2）$ git clone https://github.com/liuqichun3809/Quantum_Lab.git
-    3）$ cd Quantum_Lab
-    4）$ pip install .
-    若对Quantum_Lab内的代码进行了修改，则需要从新执行第3）和4）步，修改才能生效。
+$ cd /*/*/*（其中‘/*/*/*’为准备安装Quantum_Lab的路径）
+$ git clone https://github.com/BaksiLi/Q-Lab.git
+$ cd Q-Lab
+$ pip install .
 ```
 
-## SSL 证书配置
-- 制作 ssl 证书，用于 InstrumentServer 加密，参考'create_config_yaml.md'文件。
+4. SSL Certificate
+    - 制作 ssl 证书，用于 InstrumentServer 加密，参考'create_config_yaml.md'文件。
 
-- 创建配置文件 `config.yaml`，若使用 Windows 系统，将其置于`%ProgramData%\QuLab\`路径下，
-   参考'create_config_yaml.md'文件。
+    - 创建配置文件 `config.yaml`，若使用 Windows 系统，将其置于`%ProgramData%\QuLab\`路径下。参考 create_config_yaml.md 文件。
 
 
-## 运行前 MongoDB 启动准备
+5. Run MongoDB (everytime)
 1. `$ cd /usr/local/mongodb/bin`（若不是该路径，则改为对应mongodb安装的路径）
 2. `$ sudo ./mongod`
    此操作为开启MongoDB的服务端口，若未开启该服务端口，则Quantum_Lab程序无法进行代码和数据管理，从而无法使用。
@@ -53,7 +51,8 @@
 3. 也可以将路劲添加到系统环境变量path里，然后在任意路劲下直接运行 $ mongod即可。
 
 
-## 使用
+## Examples
+<sub>This section is slightly out-dated.</sub>
 
 ### 创建初始用户
 
@@ -291,6 +290,8 @@ plt.plot(x, y)
 plt.show()
 ```
 
-## License
+## Acknowledgement
+The first commit of this repo is licensed (inherited) under MIT License.
 
-[MIT](https://opensource.org/licenses/MIT)
+However, the following commits/releases are licensed under Apache Version 2.0, please read LICENSE for the details.
+
